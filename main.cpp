@@ -18,7 +18,7 @@ int elegir(){
     return eleccion;
 }
 
-void cuadroImpar(int orden, int eleccion){
+void cuadroImpar(int orden, int eleccion, int multiplo){
     int cuadro[orden][orden] = {0};
     for(int i = 0; i < orden; i++)
         for(int j = 0; j < orden; j++)
@@ -47,10 +47,10 @@ void cuadroImpar(int orden, int eleccion){
             fila = 0;
             columna = orden / 2;
             aux = 0;
-            while (num <= (orden*orden)*2) {
-                cuadro[fila][columna] = num;
+            while (num < (orden*orden)*2) {
                 num = (2*aux)+2;
                 aux++;
+                cuadro[fila][columna] = num;
                 // Con el algoritmo siamés calculamos la siguiente fila y columna
                 int siguienteFila = (fila - 1 + orden) % orden;
                 int siguienteColumna = (columna + 1) % orden;
@@ -63,10 +63,41 @@ void cuadroImpar(int orden, int eleccion){
             }
             break;
         case 3:
-            
+            fila = 0;
+            columna = orden / 2;
+            aux = 0;
+            while (num < ((orden*orden)*2)-1) {
+                num = ((2*aux)-1)+2;
+                aux++;
+                cuadro[fila][columna] = num;
+                // Con el algoritmo siamés calculamos la siguiente fila y columna
+                int siguienteFila = (fila - 1 + orden) % orden;
+                int siguienteColumna = (columna + 1) % orden;
+                if (cuadro[siguienteFila][siguienteColumna] != 0) {
+                    fila = (fila + 1) % orden;
+                } else {
+                    fila = siguienteFila;
+                    columna = siguienteColumna;
+                }
+            }
             break;
         case 4:
-            
+            fila = 0;
+            columna = orden / 2;
+            num = multiplo;
+            while (num <= (orden*orden)*multiplo) {
+                cuadro[fila][columna] = num;
+                num += multiplo;
+                // Con el algoritmo siamés calculamos la siguiente fila y columna
+                int siguienteFila = (fila - 1 + orden) % orden;
+                int siguienteColumna = (columna + 1) % orden;
+                if (cuadro[siguienteFila][siguienteColumna] != 0) {
+                    fila = (fila + 1) % orden;
+                } else {
+                    fila = siguienteFila;
+                    columna = siguienteColumna;
+                }
+            }
             break;
         default:
             break;
@@ -81,13 +112,18 @@ void cuadroImpar(int orden, int eleccion){
 
 int main() {
     int n;
+    int multiplo = 0;
     cout << "Bienvenid@ al generador de cuadros magicos de Cristian" << endl;
     cout << "Ingresa el numero de elementos del cuadro magico" << endl;
     cin >> n;
     error:
     int elegido = elegir();
     if(elegido < 1 || elegido > 4) goto error;
+    if(elegido == 4){
+        cout << "Ingresa el multiplo que desees" << endl;
+        cin >> multiplo;
+    }
     if(n%2 != 0){
-        cuadroImpar(n, elegido);
+        cuadroImpar(n, elegido, multiplo);
     }
 }
