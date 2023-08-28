@@ -110,6 +110,9 @@ void cuadroImpar(int orden, int eleccion, int multiplo){
     }
 }
 
+void cuadroPar(){
+}
+
 int main() {
     int n;
     int multiplo = 0;
@@ -125,5 +128,7 @@ int main() {
     }
     if(n%2 != 0){
         cuadroImpar(n, elegido, multiplo);
+    } else{
+        cout << "No se puede generar el cuadro magico de ese orden, falta implementacion." << endl;
     }
 }
