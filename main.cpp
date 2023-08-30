@@ -102,11 +102,23 @@ void cuadroImpar(int orden, int eleccion, int multiplo){
         default:
             break;
     }
+    int sumaFila = 0;
+    int sumaColumna = 0;
     for (int i = 0; i < orden; i++) {
         for (int j = 0; j < orden; j++) {
+            sumaFila += cuadro[i][j];
             cout << cuadro[i][j] << "\t";
         }
+        cout << "Suma: " << sumaFila;
+        sumaFila = 0;
         cout << endl;
+    }
+    for(int i = 0; i < orden; i++) {
+        for(int j = 0; j < orden; j++) {
+            sumaColumna += cuadro[j][i];
+        }
+        cout << "Suma: " << sumaColumna << " ";
+        sumaColumna = 0;
     }
 }
 
