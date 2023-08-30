@@ -113,23 +113,36 @@ void cuadroImpar(int orden, int eleccion, int multiplo){
     // Suma por filas
     int sumaFila = 0;
     int sumaColumna = 0;
+    int sumaDiagonal = 0;
+    int aux1;
     for (int i = 0; i < orden; i++) {
         for (int j = 0; j < orden; j++) {
             sumaFila += cuadro[i][j];
-            cout << cuadro[i][j] << "\t";
+            cout << "\t" << cuadro[i][j] << "\t";
+            if(j == i) sumaDiagonal += cuadro[i][j];
         }
-        cout << "Suma: " << sumaFila;
+        cout << "SumaF: " << sumaFila;
         sumaFila = 0;
         cout << endl;
     }
+    aux1 = sumaDiagonal;
+    sumaDiagonal = 0;
+    // Suma diagonales
+    for(int i = 0; i < orden; i++){
+        for(int j = orden-1; j >= 0; j--){
+            if(j == i) sumaDiagonal += cuadro[i][j];
+        }
+    }
+    cout << "SumaD: " << sumaDiagonal << " ";
     // Suma por columnas
     for(int i = 0; i < orden; i++) {
         for(int j = 0; j < orden; j++) {
             sumaColumna += cuadro[j][i];
         }
-        cout << "Suma: " << sumaColumna << " ";
+        cout << "SumaC: " << sumaColumna << " ";
         sumaColumna = 0;
     }
+    cout << "SumaD: " << aux1;
 }
 
 void cuadroPar(int orden){
