@@ -8,6 +8,7 @@
 using namespace std;
 
 int elegir(){
+    // Menú de opciones
     int eleccion;
     cout << "Elige el tipo de numeros a usar:" << endl;
     cout << "1. Consecutivos" << endl;
@@ -19,12 +20,16 @@ int elegir(){
 }
 
 void cuadroImpar(int orden, int eleccion, int multiplo){
+    // Declaración del cuadro vacío
     int cuadro[orden][orden] = {0};
+    // Inicialización en 0
     for(int i = 0; i < orden; i++)
         for(int j = 0; j < orden; j++)
             cuadro[i][j] = 0;
     int fila, columna, num, aux;
+    // Switch con casos del menú
     switch (eleccion) {
+        // Consecutivos
         case 1:
             fila = 0;
             columna = orden / 2;
@@ -43,6 +48,7 @@ void cuadroImpar(int orden, int eleccion, int multiplo){
                 }
             }
             break;
+        // Pares
         case 2:
             fila = 0;
             columna = orden / 2;
@@ -62,6 +68,7 @@ void cuadroImpar(int orden, int eleccion, int multiplo){
                 }
             }
             break;
+        // Impares
         case 3:
             fila = 0;
             columna = orden / 2;
@@ -81,6 +88,7 @@ void cuadroImpar(int orden, int eleccion, int multiplo){
                 }
             }
             break;
+        // Múltiplos de X
         case 4:
             fila = 0;
             columna = orden / 2;
@@ -102,6 +110,7 @@ void cuadroImpar(int orden, int eleccion, int multiplo){
         default:
             break;
     }
+    // Suma por filas
     int sumaFila = 0;
     int sumaColumna = 0;
     for (int i = 0; i < orden; i++) {
@@ -113,6 +122,7 @@ void cuadroImpar(int orden, int eleccion, int multiplo){
         sumaFila = 0;
         cout << endl;
     }
+    // Suma por columnas
     for(int i = 0; i < orden; i++) {
         for(int j = 0; j < orden; j++) {
             sumaColumna += cuadro[j][i];
@@ -122,25 +132,32 @@ void cuadroImpar(int orden, int eleccion, int multiplo){
     }
 }
 
-void cuadroPar(){
+void cuadroPar(int orden){
+    // Se necesitan algoritmos más complejos
 }
 
 int main() {
+    // Main
     int n;
     int multiplo = 0;
+    // Ingreso de orden
     cout << "Bienvenid@ al generador de cuadros magicos de Cristian" << endl;
     cout << "Ingresa el numero de elementos del cuadro magico" << endl;
     cin >> n;
+    // En caso de haber elegido mal en el menú regresa
     error:
     int elegido = elegir();
     if(elegido < 1 || elegido > 4) goto error;
     if(elegido == 4){
+        // Múltiplo en caso de opción 4
         cout << "Ingresa el multiplo que desees" << endl;
         cin >> multiplo;
     }
     if(n%2 != 0){
+        // Cuadro impar
         cuadroImpar(n, elegido, multiplo);
     } else{
+        // Cuadro impar
         cout << "No se puede generar el cuadro magico de ese orden, falta implementacion." << endl;
     }
 }
