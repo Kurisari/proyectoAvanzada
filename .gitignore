@@ -1,1 +1,4 @@
-/.vscode
+# visual
+.vscode/
+# main
+*.exe
