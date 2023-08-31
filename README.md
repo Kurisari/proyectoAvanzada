@@ -50,7 +50,9 @@ Ingresa el numero de elementos del cuadro magico
 5
 Elige el tipo de numeros a usar:
 1. Consecutivos
-2.
+2. Pares
+3. Impares
+4. Multiplos de X
 ```
 ## Authors
 
@@ -59,7 +61,7 @@ Elige el tipo de numeros a usar:
 
 ## Feedback
 
-Si tienes alguna retroalimentación puedes hacerla a crisarag8.sal@gmail.com
+If you have feedback, you can send it to crisarag8.sal@gmail.com
 
 
 ## License
