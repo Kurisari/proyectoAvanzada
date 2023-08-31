@@ -53,6 +53,13 @@ Elige el tipo de numeros a usar:
 2. Pares
 3. Impares
 4. Multiplos de X
+1
+        17              24              1               8               15      SumaF: 65
+        23              5               7               14              16      SumaF: 65
+        4               6               13              20              22      SumaF: 65
+        10              12              19              21              3       SumaF: 65
+        11              18              25              2               9       SumaF: 65
+SumaD: 65 SumaC: 65 SumaC: 65 SumaC: 65 SumaC: 65 SumaC: 65 SumaD: 65
 ```
 ## Authors
 
