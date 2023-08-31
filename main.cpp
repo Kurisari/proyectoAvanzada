@@ -1,6 +1,9 @@
 /*
     Integrantes
     ? Cristian Aragón Salazar
+
+    Repositorio:
+    https://github.com/Kurisari/proyectoAvanzada
 */
 
 #include <iostream>
