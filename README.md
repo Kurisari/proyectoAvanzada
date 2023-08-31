@@ -51,7 +51,7 @@ Ingresa el numero de elementos del cuadro magico
 Elige el tipo de numeros a usar:
 1. Consecutivos
 2.
-
+```
 ## Authors
 
 - [@Kurisari](https://www.github.com/kurisari)
