@@ -1,6 +1,7 @@
 /*
     Integrantes
     ? Cristian Aragón Salazar
+    ? Valeria Marian Andrade Monreal
 
     Repositorio:
     https://github.com/Kurisari/proyectoAvanzada
