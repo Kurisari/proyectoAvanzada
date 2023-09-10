@@ -64,6 +64,7 @@ SumaD: 65 SumaC: 65 SumaC: 65 SumaC: 65 SumaC: 65 SumaC: 65 SumaD: 65
 ## Authors
 
 - [@Kurisari](https://www.github.com/kurisari)
+- [@cidreee](https://github.com/cidreee)
 
 
 ## Feedback
